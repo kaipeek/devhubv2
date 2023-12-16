@@ -137,7 +137,7 @@ module devhub::devcard{
         user_card.open_to_work = true;
       } 
 
-      public entry fun update_portnefolio(devhub: &mut DevHub, new_portfolio: vector<u8>, id: u64, ctx: &mut TxContext){
+      public entry fun update_portfolio(devhub: &mut DevHub, new_portfolio: vector<u8>, id: u64, ctx: &mut TxContext){
         let user_card = object_table::borrow_mut(&mut devhub.cards, id);
         assert!(tx_context::sender(ctx) == user_card.owner, NOT_THE_OWNER);
        
